@@ -1,0 +1,68 @@
+/**
+ * Special thanks to: https://www.jeffersonscher.com/gm/url-bar-tweaks.html
+ * You should probably disable `browser.urlbar.oneOffSearches` in about:config as well.amd 
+ */
+@-moz-document url(chrome://browser/content/browser.xul) {
+  /* Remove " - Visit" or " - Search with" bar in the drop-down */
+  #PopupAutoCompleteRichResult richlistitem:first-of-type[type*="heuristic"],
+  #PopupAutoCompleteRichResult richlistitem:first-of-type[actiontype="searchengine"],
+  #PopupAutoCompleteRichResult richlistitem:first-of-type[actiontype="visiturl"],
+  #PopupAutoCompleteRichResult richlistitem:first-of-type[actiontype="keyword"] {
+    display:none !important;
+  }
+  /* Hide line for searching sld.tld below "Visit" Line */
+  #PopupAutoCompleteRichResult richlistitem:first-of-type[actiontype="visiturl"] +
+  richlistitem[actiontype="searchengine"] {
+    display:none !important;
+  }
+  #PopupAutoCompleteRichResult .autocomplete-richlistbox {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Restore persistent display of drop-marker */
+  #urlbar:not(:hover) > .urlbar-textbox-container > .urlbar-history-dropmarker {
+    opacity: 1 !important;
+  }
+
+  /* Default drop-down width */
+  /* Default font sizes */
+  /* Dark Themed Drop-down */
+  /* Dark Theme - Firefox 48+ */
+  #PopupAutoCompleteRichResult .autocomplete-richlistbox {
+    background-color: rgb(41, 45, 48) !important;
+  }
+  #PopupAutoCompleteRichResult .autocomplete-richlistitem {
+    border-bottom-color: #333 !important;
+  }
+  .autocomplete-richlistitem .ac-title, 
+  .autocomplete-richlistitem .ac-action,
+  .autocomplete-richlistitem .ac-separator {
+    color: rgb(241, 243, 238) !important;
+  }
+  .autocomplete-richlistitem[selected=true] {
+    background-color: #666 !important;
+  }
+  .autocomplete-richlistitem[selected=true] .ac-title, 
+  .ac-title[selected],
+  .autocomplete-richlistitem[selected=true] .ac-action,
+  .ac-action[selected],
+  .autocomplete-richlistitem[selected=true] .ac-separator,
+  .ac-separator[selected] {
+    color: #eee !important;
+  }
+  .autocomplete-richlistitem[selected=true] .ac-url, 
+  .ac-url[selected] {
+    color: #69f !important;
+  }
+  /* Use default text matching style */
+
+  /* Ability to scroll in Fx57 */
+  #PopupAutoCompleteRichResult .autocomplete-richlistbox > scrollbox {
+    overflow-y: auto !important; 
+    padding-right: 3px !important;
+  }
+  #PopupAutoCompleteRichResult .autocomplete-richlistbox {
+    padding-right: 0 !important;
+  }
+}

@@ -47,6 +47,9 @@ Allow tabs to shrink more; tabs in overflow will look the same as pinned tabs:
 Replicate Chrome's "Not Secure" on HTTP:
 * [about:config] Set ```security.insecure_connection_text.enabled``` to ```true```.
 
+Disable the "one-off" search icons at the bottom of the URL history dropdown:
+* [about:config] Set ```browser.urlbar.oneOffSearches``` to ```false```.
+
 ## Please note
 * Linux is not frequently tested; last tested on 07/09/2018.
 * Some customisation settings may no longer work (such as compact density).
