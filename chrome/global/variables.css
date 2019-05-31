@@ -14,7 +14,8 @@
 	--toolbar-color: #606368 !important;
 	
 	/* toolbar_bottom_separator */
-	--toolbox-border-bottom-color: #b3b1b3 !important;
+	--toolbox-border-bottom-color: #b3b1b3 !important; /* legacy */
+	--chrome-content-separator-color: #b3b1b3 !important;
 	
 	/* icons */
 	--lwt-toolbarbutton-icon-fill: #606368 !important;
@@ -27,6 +28,8 @@
 	
 	/* button_background_active */
 	--lwt-toolbarbutton-active-background: rgba(0, 0, 0, .11) !important;
+	
+	--lwt-toolbar-field-color: #606368 !important;
 }
 
 /* don't bother with sidebar in light mode */
@@ -45,13 +48,14 @@
 	--toolbar-bgcolor: #333639 !important;
 	
 	/* toolbar_text */
-	--toolbar-color: #f1f3ee !important;
+	--toolbar-color: #fff !important;
 	
 	/* toolbar_bottom_separator */
-	--toolbox-border-bottom-color: #282828 !important;
+	--toolbox-border-bottom-color: #282828 !important; /* legacy */
+	--chrome-content-separator-color: #282828 !important;
 	
 	/* icons */
-	--lwt-toolbarbutton-icon-fill: #f2f3f3 !important;
+	--lwt-toolbarbutton-icon-fill: #fff !important;
 	
 	/* icons_attention */
 	--lwt-toolbarbutton-icon-fill-attention: #5086ec !important;
@@ -61,6 +65,8 @@
 	
 	/* button_background_active */
 	--lwt-toolbarbutton-active-background: #4e5153 !important;
+	
+	--lwt-toolbar-field-color: #fff !important;
 	
 	/* popup */
 	--arrowpanel-background: #373737 !important;
@@ -119,14 +125,12 @@
 {
 	#tabbrowser-tabs
 	{
-		--tab-min-width: 36px !important;
+		--tab-min-width: 32px !important;
 	}
 }
 
 :root
 {	
-	--tab-hover-fill-opacity: .1 !important;
-	--tab-focus-fill-opacity: .2 !important;
 	--tab-separator-opacity: .35 !important;
 	
 	--toolbar-field-background-color: hsl(200, 12%, 95%) !important;
@@ -150,12 +154,6 @@
 
 @media (-moz-mac-yosemite-theme)
 {
-	:root
-	{
-		--tab-hover-fill-opacity: .6 !important;
-		--tab-focus-fill-opacity: .8 !important;
-	}
-	
 	:root[extradragspace]
 	{
 		--space-above-tabbar: 8px !important;
@@ -170,12 +168,6 @@
 		--toolbar-bgcolor: -moz-dialog !important;
 		--toolbar-color: -moz-dialogtext !important;
 	}
-}
-
-:root:-moz-lwtheme-darktext
-{
-	--tab-hover-fill-opacity: .6 !important;
-	--tab-focus-fill-opacity: .8 !important;
 }
 
 :root:-moz-lwtheme-darktext,
